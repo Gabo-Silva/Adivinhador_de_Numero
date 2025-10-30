@@ -1,19 +1,21 @@
 def leiaInt(msg):
-    # Ler um número inteiro, caso não seja, exibe uma mensagem de erro.
+    # Loop infinito.
     while True:
+        # Ler uma string de um número, caso não seja, exibe uma mensagem de erro.
         try:
-            num = int(input(msg))
-        except:
-            print('ERRO! DIGITE UM VALOR VÁLIDO.')
-            print('-' * 50)
-        else:
-            # Caso seja um número menor do que 0 ou maior do que 10, também será exibido uma mensagem de erro.
-            if num < 0 or num > 10:
+            num = str(input(msg)).strip()
+            # Conversão para inteiro.
+            num_int = int(num)
+            # Caso seja um número menor do que 0 ou maior do que 10 ou se alguma caractere não for um número, também será exibido uma mensagem de erro.
+            if num_int < 0 or num_int > 10 or num.isdecimal() == False:
                 print('ERRO! DIGITE UM VALOR VÁLIDO.')
                 print('-' * 50)
             else:
                 # Retornar a variável caso nenhum erro ocorra.
-                return num
+                return num_int
+        except:
+            print('ERRO! DIGITE UM VALOR VÁLIDO.')
+            print('-' * 50)
 
 
 def resultado(num_usu, num_com, cont_erros):
