@@ -1,0 +1,1 @@
+# Adivinhador_de_Numero
